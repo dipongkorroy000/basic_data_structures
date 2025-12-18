@@ -18,10 +18,10 @@ int main()
  
     int n;
     cin >> n;
+    cin.ignore();
     vector<string> v;
     for(int i =0; i<n; i++){
         string x;
-        cin.ignore();
         getline(cin , x);
         v.push_back(x);
     }
