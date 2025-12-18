@@ -1,0 +1,18 @@
+N = 100
+
+Constant     :O(1)            ->1
+Linear       :O(N)            ->100
+Logarithmic  :O(logN)         ->7
+square root  :O(sqrt(N))      ->10
+quadratic    :O(N*N)          ->10000
+Linearithmic :O(NlogN)        -> 100 * 7 = 700
+
+
+
+
+Constant     :O(1)            ->1
+Logarithmic  :O(logN)         ->7
+square root  :O(sqrt(N))      ->10
+Linear       :O(N)            ->100
+Linearithmic :O(NlogN)        ->700
+quadratic    :O(N*N)          ->10000
