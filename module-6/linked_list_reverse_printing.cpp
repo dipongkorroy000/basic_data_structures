@@ -29,13 +29,13 @@ void insert_at_tail(Node *&head, Node *&tail, int value)
     tail = newNode;
 };
 
-void print_linked_list(Node *head)
+void reverse_print_linked_list(Node *head)
 {
-    while (head != NULL)
-    {
-        cout << head->value << endl;
-        head = head->next;
-    }
+    if (head == NULL) return;
+
+    reverse_print_linked_list(head->next);
+
+    cout << head->value << endl;
 };
 
 int main()
@@ -51,7 +51,7 @@ int main()
         insert_at_tail(head, tail, value);
     }
 
-    print_linked_list(head);
+    reverse_print_linked_list(head);
 
     return 0;
 }

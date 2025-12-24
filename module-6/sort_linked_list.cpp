@@ -38,6 +38,19 @@ void print_linked_list(Node *head)
     }
 };
 
+void sorted_linked_list(Node *head)
+{
+    for (Node *i = head; i->next != NULL; i = i->next)
+    {
+        for (Node *j = i->next; j != NULL; j = j->next)
+        {
+            if(i->value > j->value){
+                swap(i->value, j->value);
+            }
+        }
+    }
+};
+
 int main()
 {
     Node *head = NULL;
@@ -47,13 +60,16 @@ int main()
     while (true)
     {
         cin >> value;
-        if(value == -1) break;
+        if (value == -1)
+            break;
         insert_at_tail(head, tail, value);
     }
+
+    sorted_linked_list(head);
 
     print_linked_list(head);
 
     return 0;
 }
 
-// 10 20 30 40 50 -1
+// 10 30 50 40 20 100 60 80 20 -1

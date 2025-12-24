@@ -38,6 +38,23 @@ void print_linked_list(Node *head)
     }
 };
 
+void delete_at_Tail(Node *head, Node *&tail, int position)
+{
+    for (int i = 1; i < position; i++)
+    {
+        head = head->next;
+    }
+
+    Node *deleteNode = head->next;
+
+    head->next = head->next->next;
+
+    // cout << deleteNode->value << endl; // which element delete -> print this element
+
+    delete deleteNode;
+    tail = head;
+};
+
 int main()
 {
     Node *head = NULL;
@@ -47,9 +64,12 @@ int main()
     while (true)
     {
         cin >> value;
-        if(value == -1) break;
+        if (value == -1)
+            break;
         insert_at_tail(head, tail, value);
     }
+
+    delete_at_Tail(head, tail, 4); // got tail last index before index
 
     print_linked_list(head);
 

@@ -38,6 +38,21 @@ void print_linked_list(Node *head)
     }
 };
 
+void delete_at_any_Node(Node *head, int position)
+{
+    for(int i =1; i< position; i++){
+        head = head->next;
+    }
+
+    Node *deleteNode = head->next;
+
+    head->next = head->next->next;
+
+    // cout << deleteNode->value << endl; // which element delete -> print this element
+
+    delete deleteNode;
+};
+
 int main()
 {
     Node *head = NULL;
@@ -47,9 +62,12 @@ int main()
     while (true)
     {
         cin >> value;
-        if(value == -1) break;
+        if (value == -1)
+            break;
         insert_at_tail(head, tail, value);
     }
+
+    delete_at_any_Node(head, 4);
 
     print_linked_list(head);
 
