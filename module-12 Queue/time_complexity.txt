@@ -1,0 +1,7 @@
+Queue Operation                                  
+push()                                        -----time complexity------
+pop()                                        push()                 pop()  
+front()                           Array      O(1)                   O(N)
+size()                            Singly     O(1)                   O(1)
+empty()                           Doubly     O(1)                   O(1)
+back()                                 -- because singly ro doubly better time complexity
